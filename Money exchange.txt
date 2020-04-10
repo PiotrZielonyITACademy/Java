@@ -1,0 +1,56 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main{
+
+    public static void main(String[] args) {
+        String answer;
+
+        Scanner scan = new Scanner(System.in);
+        Scanner scan2= new Scanner(System.in);
+        do {
+            Scanner ans= new Scanner(System.in);
+            System.out.println("Hello, welcome in stock exchange for PLN. Enter the amount of money you want to convert");
+            int sum = scan.nextInt();
+            double[]currency1={4.53, 4.17 , 5.17, 4.29, 22073.59};
+            System.out.println("Choose a currency: EUR, USD, GBF, CHF, VES, All");
+            String currency = scan2.nextLine();
+            switch (currency) {
+                case"EUR":
+                    System.out.println(sum+" PLN is " +sum*currency1[0]+" EUR");
+                    break;
+                case"USD":
+                    System.out.println(sum+" PLN is " +sum*currency1[1]+" USD");
+                    break;
+                case"GBP":
+                    System.out.println(sum+" PLN is "+sum*currency1[2]+" GBP");
+                    break;
+                case"CHF":
+                    System.out.println(sum+" PLN is "+sum*currency1[3]+" CHF");
+                    break;
+                case"VES":
+                    System.out.println(sum+" PLN is "+sum*currency1[4]+" VES (Venezuelan Bolivars)");
+                    break;
+                case"All":
+                    System.out.println(sum+" PLN is\n"+sum*currency1[0]+" EUR\n"+sum*currency1[1]+" USD\n"+sum*currency1[2]+" GBP\n"+sum*currency1[3]+" CHF\n"+sum*currency1[4]+" VES (Venezuelan Bolivars");
+                    break;
+                default:
+                    System.out.println("There is no such currency.");
+            }
+            System.out.println("Do you want to convert another sum of money? Yes/No");
+            answer= ans.nextLine();
+            switch (answer) {
+                case "Yes":
+                    break;
+                case "No":
+                    System.out.println("Goodbye!");
+                    break;
+                default:
+                    System.out.println("I don't understand, so I invite you to the next attempt.");
+                    break;
+            }
+
+        } while (!answer.equals("No"));
+
+    }
+}

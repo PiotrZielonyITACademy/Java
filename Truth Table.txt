@@ -1,0 +1,31 @@
+package com.company;
+
+public class Main {
+
+    public static void main(String[] args) {
+
+        int a;
+        int b;
+        System.out.println("A\tB\tOR\tAND\tXOR");
+
+        a = 1; b = 1;
+        System.out.print(a + "\t" + b +"\t");
+        System.out.print((a&b) + "\t" + (a|b) + "\t");
+        System.out.println(a^b);
+
+        a = 1; b = 0;
+        System.out.print(a + "\t" + b +"\t");
+        System.out.print((a&b) + "\t" + (a|b) + "\t");
+        System.out.println(a^b);
+
+        a = 0; b = 1;
+        System.out.print(a + "\t" + b +"\t");
+        System.out.print((a&b) + "\t" + (a|b) + "\t");
+        System.out.println(a^b);
+
+        a = 0; b = 0;
+        System.out.print(a + "\t" + b +"\t");
+        System.out.print((a&b) + "\t" + (a|b) + "\t");
+        System.out.println(a^b);
+    }
+}

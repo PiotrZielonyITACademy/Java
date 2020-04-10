@@ -1,0 +1,37 @@
+package com.company;
+import java.util.Scanner;
+
+public class Main{
+
+    public static void main(String[] args) {
+        String answer;
+
+        Scanner scan2 = new Scanner(System.in);
+        Scanner scan1 = new Scanner(System.in);
+        String number;
+        do {System.out.println("Choose a number from 0 to 9");
+        number = scan1.nextLine();
+            switch(number){
+                case "8":
+                    System.out.println("Correct answer!");
+                    break;
+                default:
+                    System.out.println("Wrong answer!");
+            }
+            System.out.println("Do you want to try again? Yes/No");
+            answer= scan2.nextLine();
+            switch (answer) {
+                case "Yes":
+                    break;
+                case "No":
+                    System.out.println("Goodbye!");
+                    break;
+                default:
+                    System.out.println("I don't understand, so let's try again.");
+                    break;
+            }
+
+        } while (!answer.equals("No"));
+
+    }
+}
