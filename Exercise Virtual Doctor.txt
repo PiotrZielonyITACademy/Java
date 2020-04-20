@@ -1,0 +1,79 @@
+package com.company;
+import java.util.Scanner;
+public class Main {
+
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        double temperature;
+        int chestpainanswer;
+        int coughanswer;
+        int endquestion;
+        do {
+            System.out.println("Welcome in Virtual Doctor");
+            do {
+                System.out.println("Enter your temperature");
+                temperature = scanner.nextDouble();
+                if (temperature >= 36 && temperature <= 42)
+                    System.out.println("");
+                else {
+                    System.out.println("Wrong value. You must enter a temperature no lesser than 36 and no greater than 42 Celsius degree");
+                }
+            } while (temperature < 36 || temperature > 42);
+            do {
+                System.out.println("Do you have a cough? 1.Yes 2.No");
+                coughanswer = scanner.nextInt();
+                if (coughanswer == 1 || coughanswer == 2) ;
+                else {
+                    System.out.println("Choose 1 or 2");
+                }
+            }
+            while (coughanswer != 1 && coughanswer != 2);
+            do {
+                System.out.println("Do you have a chest pain? 1. Yes 2. No");
+                chestpainanswer = scanner.nextInt();
+                if (chestpainanswer == 1 || chestpainanswer == 2) ;
+                else {
+                    System.out.println("Choose 1 or 2");
+                }
+            } while (chestpainanswer != 1 && chestpainanswer != 2);
+            if (temperature >= 36 && temperature < 37 && coughanswer == 2 && chestpainanswer == 2) {
+                System.out.println("You're healthy");
+            } else if (temperature >= 37 && temperature < 38 && coughanswer == 2 && chestpainanswer == 2) {
+                System.out.println("You have a subfebrile condition, you should rest for a few days");
+            } else if (temperature >= 38 & coughanswer == 2 && chestpainanswer == 2) {
+                System.out.println("You have a high fever, you should definitely relax and consult a doctor");
+            } else if (temperature >= 36 && temperature < 37 && coughanswer == 1 & chestpainanswer == 2) {
+                System.out.println("You should relax and avoid cold air, it can exacerbate coughing. In case of deterioration of health consult a doctor.");
+            } else if (temperature >= 37 && temperature < 38 && coughanswer == 1 && chestpainanswer == 2) {
+                System.out.println("You should avoid cold air and take cold medicine. If your health does not improve, be sure to consult a doctor");
+            } else if (temperature >= 38 && coughanswer == 1 && chestpainanswer == 2) {
+                System.out.println("Be sure to consult a doctor, avoid cold air.");
+            } else if (temperature >= 36 && temperature < 37 && coughanswer == 2 && chestpainanswer == 1) {
+                System.out.println("Watch your health closely, and consult your doctor if symptoms worsen.");
+            } else if (temperature >= 37 && temperature < 38 && coughanswer == 2 && chestpainanswer == 1) {
+                System.out.println("It does not look good. Avoid cool air, drink something hot and see a doctor.");
+            } else if (temperature > 38 && coughanswer == 2 && chestpainanswer == 1) {
+                System.out.println("See a doctor as soon as possible and try not to overtire.");
+            } else if (temperature >= 36 && temperature < 37 && coughanswer == 1 && chestpainanswer == 1) {
+                System.out.println("It is better to see a doctor as soon as possible, drink a lot of lemon tea, avoid effort and cool air.");
+            } else if (temperature >= 37 && temperature < 38 && coughanswer == 1 && chestpainanswer == 1) {
+                System.out.println("It doesn't really look good. Contact a doctor as soon as possible and ask your loved ones for help");
+            } else if (temperature > 38 && coughanswer == 1 && chestpainanswer == 1) {
+                System.out.println("Go to the hospital as soon as possible. Your life is in danger.");
+            }
+            do { System.out.println("Do you want to use Virtual Doctor again? 1. Yes 2.No");
+                endquestion = scanner.nextInt();
+                if (endquestion==1||endquestion==2)
+                break;
+                else{System.out.println("You must choose 1 or 2)");
+                break;
+                }
+            } while (endquestion!=1||endquestion!=2);
+        }while(endquestion!=2);
+        System.out.println("Goodbye");
+    }
+
+}
+
+
+
